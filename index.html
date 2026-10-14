@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+    <!-- Metadados e configuração da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Curso de Programação</title>
 </head>
-
 <body>
 
-    <!-- Cabeçalho princial e navegação -->
+    <!-- Cabeçalho principal e navegação -->
     <header>
-        <h1>Treinamento Full Stack 2026</h1>
-        <p>Domine o desenvolvimento web e backend com metodologias ativas</p>
-
+        <h1>Treinamento Full-Stack 2026</h1>
+        <p>Domine o desenvolvimento web e backend com metodologias ativas.</p>
         <nav>
             <ul>
-                <li><a href="#">Sobre o Curso</a></li>
-                <li><a href="#">Módulos</a></li>
-                <li><a href="#">Investimentos</a></li>
-                <li><a href="#">Inscreva-se</a></li>
+                <li><a href="#sobre">Sobre o Curso</a></li>
+                <li><a href="#modulos">Módulos</a></li>
+                <li><a href="#investimento">Investimento</a></li>
+                <li><a href="#inscricao">Inscreva-se</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo principal da página -->
+    <hr>
 
+    <!-- Conteúdo principal da página -->
     <main>
+        
         <!-- Seção de texto com imagem e formatação -->
-        <section>
-            <h2> Sobre o Curso</h2>
-            <img src="" alt="">
-            <p> Este treinamento foi desenhado para transformar você em um <strong>Desenvolvedor FullStack </strong>,
-                para que consiga resolver problemas do mundo real.</p>
+        <section id="sobre">
+            <h2>Sobre o Curso</h2>
+            <!-- Imagem de exemplo (use uma URL real ou caminho local) -->
+            <img src="https://via.placeholder.com/600x200" alt="Alunos programando em sala de aula" width="600">
+            
+            <p>Este treinamento intensivo foi desenhado para transformar você em um desenvolvedor completo. Vamos cobrir desde a base do <strong>Front-end</strong> até a construção de APIs robustas no <em>Back-end</em>.</p>
+            
+            <article>
+                <h3>Por que escolher este Curso?</h3>
+                <p>Utilizamos dinâmicas práticas, resolução de problemas reais e gamificação (como quizzes e escape rooms de código) para garantir que o aprendizado seja dinâmico.</p>
+            </article>
         </section>
 
-        <!-- Seçao de modulos com listas ordenadas e não ordenadas -->
-        <section>
+        <!-- Seção com listas ordenadas e não ordenadas -->
+        <section id="modulos">
             <h2>O que você vai aprender</h2>
-
+            
             <h3>Trilha Front-end (Base)</h3>
             <ul>
                 <li>HTML5 e Semântica</li>
@@ -46,18 +53,18 @@
                 <li>JavaScript Moderno</li>
             </ul>
 
-
             <h3>Trilha Back-end (Passo a passo)</h3>
             <ol>
                 <li>Lógica de Programação</li>
                 <li>Orientação a Objetos com Java</li>
-                <li>Banco de Dados (MYSQL)</li>
+                <li>Framework Spring Boot</li>
+                <li>Bancos de Dados (Relacionais e NoSQL)</li>
             </ol>
         </section>
-        <!-- Seçao com Tabela de dados -->
 
-        <section>
-            <h2>Planos e Investimentos </h2>
+        <!-- Seção com Tabela de dados -->
+        <section id="investimento">
+            <h2>Planos e Investimento</h2>
             <table border="1" cellpadding="10" cellspacing="0">
                 <thead>
                     <tr>
@@ -70,22 +77,64 @@
                     <tr>
                         <td>Básico</td>
                         <td>Apenas aulas gravadas</td>
-                        <td>R$ 57,00</td>
-                    </tr>
-                    <tr>
-                        <td>Pro</td>
-                        <td>Aula +  Mentoria ao vivo</td>
                         <td>R$ 97,00</td>
                     </tr>
                     <tr>
-                        <td>Ultimate</td>
-                        <td>Aula + Mentoria + Ebook + Whatsapp</td>
-                        <td>R$ 299,00</td>
+                        <td>Pro</td>
+                        <td>Aulas + Mentorias ao vivo</td>
+                        <td>R$ 197,00</td>
                     </tr>
                 </tbody>
             </table>
         </section>
-    </main>
-</body>
 
+        <br>
+
+        <!-- Seção de Formulário de captura de dados -->
+        <section id="inscricao">
+            <h2>Garanta sua Vaga</h2>
+            <form action="/enviar-dados" method="POST">
+                
+                <!-- Campos de texto -->
+                <label for="nome">Nome Completo:</label><br>
+                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome"><br><br>
+
+                <label for="email">E-mail Profissional:</label><br>
+                <input type="email" id="email" name="email" required placeholder="exemplo@email.com"><br><br>
+
+                <!-- Campo de seleção (Dropdown) -->
+                <label for="nivel">Nível de Experiência:</label><br>
+                <select id="nivel" name="nivel">
+                    <option value="iniciante">Iniciante (Nunca programei)</option>
+                    <option value="intermediario">Intermediário (Já fiz alguns projetos)</option>
+                    <option value="avancado">Avançado (Busco especialização em Java/Spring)</option>
+                </select><br><br>
+
+                <!-- Botões de rádio -->
+                <p>Como prefere estudar?</p>
+                <input type="radio" id="presencial" name="modalidade" value="presencial">
+                <label for="presencial">Presencial</label><br>
+                <input type="radio" id="online" name="modalidade" value="online" checked>
+                <label for="online">Online</label><br><br>
+
+                <!-- Área de texto longa -->
+                <label for="expectativa">Quais são suas expectativas?</label><br>
+                <textarea id="expectativa" name="expectativa" rows="4" cols="40"></textarea><br><br>
+
+                <!-- Botão de envio -->
+                <button type="submit">Enviar Inscrição</button>
+            </form>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2026 Treinamentos em Tecnologia. Todos os direitos reservados.</p>
+        <p>Siga-nos no <a href="https://github.com" target="_blank">GitHub</a>.</p>
+    </footer>
+
+</body>
 </html>
