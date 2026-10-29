@@ -32,7 +32,7 @@ a{
     text-decoration: none;
 }
 
-img{
+img, iframe{
     width: 25vw;
     height: 30vh;
     background-color: #D9D9D9;
@@ -43,6 +43,9 @@ img{
     box-shadow: 0px 0px 25px #33d4e9;
     border-radius: 100px 100px 10px 10px;
 }
+
+
+
 .imgs-esquerda{
 
     border-radius: 150px 10px 10px 10px;
