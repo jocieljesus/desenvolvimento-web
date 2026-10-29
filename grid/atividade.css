@@ -1,0 +1,76 @@
+.cabecalho{
+    grid-area: header;
+}
+
+.n1{
+    grid-area: not1;
+}
+
+.n2{
+    grid-area: not2;
+}
+
+.n3{ grid-area: not3;
+}
+
+.propaganda{ grid-area: propaganda;}
+
+.area-produtos{
+    grid-area: produtos;
+}
+
+.layout-principal{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    grid-template-areas:  "header header header" "not1 not2 not3" "propaganda produtos produtos";
+}
+
+.area-produtos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+
+
+/* Layout Desktop (Padrão) */
+.cabecalho-principal {
+  display: grid;
+  /* Cria 3 colunas: Logo justa, Busca ocupando o espaço livre, Menu justo */
+  grid-template-columns: auto 1fr auto; 
+  gap: 20px;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #2c3e50;
+  color: white;
+}
+
+/* No desktop, mantemos a ordem original do código */
+.logo { order: 1; }
+.busca { order: 2; }
+.menu { order: 3; }
+
+/* Adaptação para Mobile */
+@media (max-width: 768px) {
+  .cabecalho-principal {
+    /* Reduz para 2 colunas iguais */
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .logo { 
+    order: 1; 
+  }
+  
+  .menu { 
+    order: 2; 
+    text-align: right; /* Garante que o botão fique encostado na direita */
+  }
+  
+  .busca { 
+    order: 3; /* Salta para o final visualmente */
+    grid-column: 1 / -1; /* Força o elemento a cruzar a tela inteira (da linha 1 até a última) */
+    margin-top: 10px;
+  }
+}
